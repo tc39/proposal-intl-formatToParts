@@ -55,16 +55,16 @@ let numFormatter = Intl.NumberFormat('en', {
   style: 'currency',
   currency: 'EUR',
 });
-let value = -1000;
+let amount = -1000;
 
-let numStr = numFormatter.formatToParts(-1000).map(({type, value}) => {
+let numStr = numFormatter.formatToParts(amount).map(({type, value}) => {
   switch (type) {
     case 'currency': return `<b>${value}</b>`;
-    case 'number'  : return `<i>{$value}</i>`;
+    case 'number'  : return `<i>${value}</i>`;
     default        : return value;
   }
 }).reduce((string, part) => string + part);
 
-console.log(numFormatter.format(value)); // yields "-€1,000.00"
+console.log(numFormatter.format(amount)); // yields "-€1,000.00"
 console.log(numStr); // yields "-<b>€</b><i>1,000.00</i>"
 ```
