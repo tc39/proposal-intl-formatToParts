@@ -3,7 +3,7 @@ Proposal, specs, tests and reference implementation for DateTimeFormat.prototype
 
 ### Status
 
-__Stage 1__
+__Stage 4__
 
 Implementation Progress
 
